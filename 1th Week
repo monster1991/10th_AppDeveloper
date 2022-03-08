@@ -2,3 +2,41 @@
 Install Visual Studio Code
 Install Android Studio
 Install node & npm
+
+220308
+변수, 리스트, 딕셔너리 정의
+자바스크립트 기본 제공 함수(.도구)
+사용자 정의 함수, 조건문, 반복문
+딕셔너리 비구조 할당(키값과 변수명은 반드시 동일) - 딕셔너리 => 변수
+(`)백틱 사용법
+객체 리터럴(키값과 변수명은 반드시 동일) - 변수 => 딕셔너리
+for문 대신 .map 도구 사용하기
+여러개의 js 파일 사용할 때 export, import 사용하기
+
+1주차 숙제
+숙제1: 배열에서 특정 원소 갯수 구하기 - map 를 함수를 사용해서 해결하기
+let fruit_list = ['사과','감','감','배','포도','포도','딸기','포도','감','수박','딸기']
+fruit_list.map((fruit,i)=>{
+	if (fruit == '딸기') {
+		count += 1;
+	}
+})
+console.log(count); // 2
+
+숙제2: 이메일 판별하기
+1. 구글에 "자바스크립트 indexOf"라고 검색 한 다음 indexOf를 이용하여 풀어보세요
+function checkEmail(email){
+    if(email.indexOf('@') > 0 && email.split('@')[1].indexOf('.') > 0)
+        console.log("이메일이 맞습니다.")
+    else
+        console.log("이메일이 아닙니다.")
+}
+
+2. 구글에 "자바스크립트 이메일 정규표현식"이라고 검색 한 다음 정규 표현식을 이용해서 구현해보세요
+function checkEmail(email){
+    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(email.match(mailformat))
+        console.log("이메일이 맞습니다.")
+    else
+        console.log("이메일이 아닙니다.")
+}
